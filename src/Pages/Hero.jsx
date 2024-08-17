@@ -3,8 +3,8 @@ import imgProfile from "../Assets/profile.jpg";
 
 const Hero = () => {
   return (
-    <>
-      <div className="mx-auto container py-5 px-2">
+    <div id="home">
+      <div className="mx-auto container py-[5rem] px-2">
         <div className="grid grid-cols-2 gap-3">
           <div className="col-span-2 md:col-span-1">
             <div className="">
@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

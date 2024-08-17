@@ -1,26 +1,27 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="p-2 bg-primary">
+    <div className="p-2 bg-primary fixed top-0 left-0 w-full z-50">
       <div className="container flex mx-auto justify-between">
         <h1 className="text-2xl font-bold text-quaternary">Matt Portfolio</h1>
         <ul className="hidden xl:flex items-center gap-4">
-          <a href="#" className="text-quaternary">
+          <Link to="home" smooth={true} duration={500} className="cursor-pointer text-quaternary">
             Home
-          </a>
-          <a href="#" className="text-quaternary">
+          </Link>
+          <Link to="projects" smooth={true} duration={500} className="cursor-pointer text-quaternary">
             Projects
-          </a>
-          <a href="#" className="text-quaternary">
+          </Link>
+          <Link to="skills" smooth={true} duration={500} className="cursor-pointer text-quaternary">
             Skills
-          </a>
-          <a href="#" className="text-quaternary">
+          </Link>
+          <Link to="contact" smooth={true} duration={500} className="cursor-pointer text-quaternary">
             Contact
-          </a>
+          </Link>
         </ul>
         <div className="xl:hidden md:hidden flex items-center text-2xl text-quaternary mt-1">
           {isMenuOpen ? (
@@ -40,18 +41,42 @@ const Navbar = () => {
             isMenuOpen ? "opacity-100" : "opacity-0"
           }`}
         >
-          <li className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer">
+          <Link
+            to="home"
+            smooth={true}
+            duration={500}
+            className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Home
-          </li>
-          <li className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer">
+          </Link>
+          <Link
+            to="projects"
+            smooth={true}
+            duration={500}
+            className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Projects
-          </li>
-          <li className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer">
+          </Link>
+          <Link
+            to="skills"
+            smooth={true}
+            duration={500}
+            className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Skills
-          </li>
-          <li className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer">
+          </Link>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="p-1 list-none w-full text-center hover:bg-tertiary hover:text-quaternary transition-all duration-300 cursor-pointer"
+            onClick={() => setIsMenuOpen(false)}
+          >
             Contacts
-          </li>
+          </Link>
         </div>
       </div>
     </div>
